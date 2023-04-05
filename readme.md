@@ -3,7 +3,7 @@
 
 fight the enemies around you
 
-Game Linke: https://tarik775.itch.io/compat
+Game Link: https://tarik775.itch.io/compat
 
 <img src="https://user-images.githubusercontent.com/10331972/229951922-4bb20fa6-03b4-444e-ae2a-cced52268d87.png">
 
