@@ -1502,7 +1502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430136215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1527,8 +1527,9 @@ MonoBehaviour:
   - {fileID: 6087188842512103057, guid: d5f1201aca030354abbc03a534b7e402, type: 3}
   minTimeBetweenSpawns: 1
   maxTimeBetweenSpawns: 3
-  maxHDistance: 3
-  maxVDistance: 2
+  maxHDistance: 5.39
+  maxVDistance: 1.52
+  numberOfParallelInstance: 4
   player: {fileID: 212259381695310199}
 --- !u!850595691 &1609782192
 LightingSettings:
@@ -1616,7 +1617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736249060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

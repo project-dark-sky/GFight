@@ -8,14 +8,15 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(Collider2D))]
 public class Health : MonoBehaviour
 {
-    [SerializeField] float maxHealth = 100;
+    [SerializeField] public float maxHealth = 100;
     [SerializeField] bool destroyOnDying = true;
     [SerializeField] float destroyAfter = 6f;
     [SerializeField] string scoreLogicTag;
 
     [SerializeField] Bar bar;
 
-    private float currentHealth;
+    public float currentHealth { get; private set; }
+
     private Animator animator;
     private bool hasDied = false;
     private ScoreLogic scoreLogic;
@@ -30,6 +31,7 @@ public class Health : MonoBehaviour
 
     public void increaseHealth(int hp)
     {
+        Debug.Log("health increase by " + hp + " for " + gameObject.name);
         if (currentHealth + hp < currentHealth)
         {
             animator.SetTrigger("Hurt");
@@ -65,6 +67,7 @@ public class Health : MonoBehaviour
             StartCoroutine(waitAndDestroy());
     }
 
+    // observable pattern may be a best fit for this functionalty for SOC
     virtual protected void DisableComponents()
     {
 
@@ -107,5 +110,6 @@ public class Health : MonoBehaviour
     {
         return this.hasDied;
     }
+
 
 }

@@ -54,7 +54,7 @@ public class Movment : MonoBehaviour
         if (jumpButton.WasPerformedThisFrame() && isOnGround)
         {
             body2d.velocity = new Vector2(body2d.velocity.x, jumpForce);
-            isOnGround = false;
+            //isOnGround = false;
         }
 
         //Run
@@ -77,7 +77,7 @@ public class Movment : MonoBehaviour
         animator.SetInteger("AnimState", 0);
     }
 
-
+    // when touching the ground upate isOnGround to true
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == groundTag)
@@ -88,6 +88,7 @@ public class Movment : MonoBehaviour
 
     }
 
+    // when jumping upate isOnGround to false
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.tag == groundTag)

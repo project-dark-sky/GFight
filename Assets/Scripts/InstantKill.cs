@@ -23,15 +23,16 @@ public class InstantKill : MonoBehaviour
     {
         if (other.tag == triggeringTag)
         {
-            GetComponent<Collider2D>().enabled = false;
+            // hide the power up
             GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false; 
 
             var compat = other.GetComponent<PlayerCompat>();
             if (compat)
             {
                 if (coroutine != null)
                 {
-                    StopCoroutine(coroutine);
+                    StopCoroutine(coroutine); // disable old power up
                 }
 
                 coroutine = StartCoroutine(startInstantKill(compat));

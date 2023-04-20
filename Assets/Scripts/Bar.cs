@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Bar : MonoBehaviour
 {
-    [SerializeField]
-    private float maxValue = 100f;
 
-    private float value;
 
     [SerializeField]
     private RectTransform topBar;
@@ -21,11 +18,16 @@ public class Bar : MonoBehaviour
     private float _fullHeight;
     private float TargetHeight => value * _fullHeight / maxValue;
     private Coroutine adjustBarHeightCoroutine;
+    private float value;
+    private Health health;
+    private float maxValue;
 
     private void Start()
     {
+        health = gameObject.GetComponentInParent<Health>();
         _fullHeight = topBar.rect.height;
-        value = maxValue;
+        value = health.currentHealth;
+        maxValue = health.maxHealth;
     }
 
     public void setBar(float amount)

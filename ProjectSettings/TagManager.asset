@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Enemy
   - ScoreLogic
+  - Powerup
   layers:
   - Default
   - TransparentFX

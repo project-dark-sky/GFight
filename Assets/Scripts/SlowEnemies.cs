@@ -33,6 +33,7 @@ public class SlowEnemies : MonoBehaviour
     {
         if (other.tag == triggerTag)
         {
+            // hide the gameobejct to start a coroutine on it
             Movment movment = other.GetComponent<Movment>();
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
@@ -48,9 +49,9 @@ public class SlowEnemies : MonoBehaviour
 
     IEnumerator slowMotionStart()
     {
-        slowEnemies();
+        slowEnemies(); // slow down the speed
         yield return new WaitForSeconds(time);
-        defaultEnemies();
+        defaultEnemies(); // defualt speed
         Destroy(gameObject);
     }
 

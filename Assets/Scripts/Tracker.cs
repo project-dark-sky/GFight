@@ -33,14 +33,15 @@ public class Tracker : MonoBehaviour
         {
             enabled = false;
         }
-        wanted_position = target.position;
-        wanted_position.z = transform.position.z;
-        wanted_position.y = transform.position.y;
-        transform.position = Vector3.Lerp(transform.position, wanted_position, Time.deltaTime * followTightness);
+        wanted_position = target.position; // target position
+        wanted_position.z = transform.position.z; // keep z position the same
+        wanted_position.y = transform.position.y; // y position the same
+        transform.position = Vector3.Lerp(transform.position, wanted_position, Time.deltaTime * followTightness); // use Lerp to linearly move from p1 to p2
 
+        // change sprite direction
         if (wanted_position.x > transform.position.x)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-1f, 1f, 1f); 
         }
         else
         {

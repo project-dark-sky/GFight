@@ -38,7 +38,9 @@ public class AutoPlayerCompat : MonoBehaviour
 
         if (distance < attackRange)
         {
+            // problem with this approach that the attack function may be excuted more than once before the delay function gets excuted !!
             attack();
+            enabled = false;
             StartCoroutine(delay());  // start delay
         }
     }
@@ -46,7 +48,6 @@ public class AutoPlayerCompat : MonoBehaviour
 
     private IEnumerator delay()
     {   // co-routines
-        enabled = false;
         yield return new WaitForSeconds(attackRate);
         enabled = true;
     }
@@ -64,7 +65,7 @@ public class AutoPlayerCompat : MonoBehaviour
         // damage the enemies
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("we hit " + enemy.name);
+            Debug.Log("we hit " + enemy.name + " with damage "+ attackDamage);
             enemy.GetComponent<Health>().increaseHealth(-attackDamage);
         }
 
