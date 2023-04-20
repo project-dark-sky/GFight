@@ -18,14 +18,13 @@ public class InstantKill : MonoBehaviour
 
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == triggeringTag)
         {
             // hide the power up
             GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<Collider2D>().enabled = false; 
+            GetComponent<Collider2D>().enabled = false;
 
             var compat = other.GetComponent<PlayerCompat>();
             if (compat)
@@ -39,7 +38,6 @@ public class InstantKill : MonoBehaviour
             }
         }
     }
-
 
     IEnumerator startInstantKill(PlayerCompat compat)
     {

@@ -65,12 +65,11 @@ public class AutoPlayerCompat : MonoBehaviour
         // damage the enemies
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("we hit " + enemy.name + " with damage "+ attackDamage);
+            Debug.Log("we hit " + enemy.name + " with damage " + attackDamage);
             enemy.GetComponent<Health>().increaseHealth(-attackDamage);
         }
 
     }
-
 
 
     private void OnDrawGizmosSelected()
@@ -78,8 +77,6 @@ public class AutoPlayerCompat : MonoBehaviour
         if (attackPoint == null) return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
-
 
 
     public void setAttackRate(float rate)

@@ -41,7 +41,7 @@ public class Tracker : MonoBehaviour
         // change sprite direction
         if (wanted_position.x > transform.position.x)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f); 
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else
         {
